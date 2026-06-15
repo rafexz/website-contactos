@@ -579,3 +579,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['acao_editar'])) {
 
 </body>
 </html>
+
+// ============================================================
+// Já sei trabalhar com o git hihihihi
+// ============================================================
