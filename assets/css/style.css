@@ -1,0 +1,740 @@
+body {
+    background-color: #f5f5f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+/* Título */
+.titulo-contactos {
+    text-align: center;
+    font-size: 34px;
+    font-weight: 300;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    color: #222;
+}
+
+/* Barra de pesquisa + botões */
+.search-and-view {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 40px;
+    padding: 0 15px;
+}
+
+.search-and-view .search-wrapper {
+    margin-bottom: 0;
+}
+
+/* Barra de Pesquisa */
+.search-wrapper {
+    max-width: 480px;
+    width: 480px;
+    position: relative;
+}
+
+.search-wrapper .form-control {
+    border-radius: 25px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border: 1px solid #ddd;
+    background-color: #efefef;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    color: #555;
+    height: 42px;
+    font-size: 14px;
+    width: 100%;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-wrapper .form-control:focus {
+    border-color: #1e90ff;
+    box-shadow: 0 2px 12px rgba(30,144,255,0.15);
+    outline: none;
+    background-color: #fff;
+}
+
+/* Lupa à esquerda - clicável para focar */
+.search-icon-left {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 15px;
+    z-index: 1;
+    pointer-events: all;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.search-icon-left:hover {
+    color: #1e90ff;
+}
+
+/* X à direita - só aparece quando há texto */
+.search-icon-right {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 15px;
+    z-index: 1;
+    pointer-events: all;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.search-icon-right:hover {
+    color: #e00;
+}
+
+/* Botões de vista */
+.view-btns {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.btn-vista {
+    width: 38px;
+    height: 38px;
+    border: 1px solid #ddd;
+    background-color: #efefef;
+    border-radius: 8px;
+    color: #888;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-vista:hover {
+    background-color: #e0e0e0;
+    color: #444;
+}
+
+.btn-vista.active {
+    background-color: #1e90ff;
+    border-color: #1e90ff;
+    color: #fff;
+}
+
+/* Grelha geral */
+.contactos-grid.vista-grelha {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contactos-grid.vista-grelha .col-item {
+    display: flex;
+}
+
+.contact-card {
+    flex: 1;
+}
+
+/* Card de Contacto */
+.contact-card {
+    background-color: #e2e2e2;
+    border-radius: 14px;
+    padding: 18px 16px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 22px;
+    min-height: 130px;
+    transition: box-shadow 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+}
+
+.contact-card:hover {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+/* Foto Oval */
+.foto-wrapper {
+    flex-shrink: 0;
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 18px;
+    background-color: #bbb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.foto-wrapper img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 15%;
+}
+
+/* Ícone placeholder quando não há foto */
+.foto-placeholder {
+    font-size: 44px;
+    color: #fff;
+}
+
+/* Informações */
+.info {
+    flex: 1;
+    min-width: 0;
+}
+
+.info p {
+    margin: 3px 0;
+    font-size: 13.5px;
+    color: #333;
+    line-height: 1.55;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.info-nome {
+    font-size: 14px !important;
+    font-weight: normal;
+}
+
+.info-email {
+    color: #444 !important;
+}
+
+.info-tel {
+    color: #444 !important;
+}
+
+/* Ícones redes sociais */
+.linkedin-icons {
+    margin-top: 9px;
+}
+
+.linkedin-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background-color: #0a66c2;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 14px;
+    margin-right: 5px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.linkedin-icons a:hover {
+    background-color: #004182;
+    text-decoration: none;
+    color: #fff;
+}
+
+/* VISTA GRELHA */
+.vista-grelha .col-item {
+    float: left;
+}
+
+@media (min-width: 992px) {
+    .vista-grelha .col-item:nth-child(3n+1) {
+        clear: left;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .vista-grelha .col-item:nth-child(2n+1) {
+        clear: left;
+    }
+}
+
+/* VISTA LISTA */
+.vista-lista .col-item {
+    width: 100% !important;
+    float: none !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
+.vista-lista .col-item.col-sm-6,
+.vista-lista .col-item.col-md-4 {
+    width: 100% !important;
+    float: none !important;
+}
+
+.vista-lista .contact-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-radius: 10px;
+    min-height: 90px;
+}
+
+.vista-lista .foto-wrapper {
+    width: 60px;
+    height: 68px;
+}
+
+.vista-lista .foto-placeholder {
+    font-size: 30px;
+}
+
+.vista-lista .info-tel {
+    display: none;
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 991px) {
+    .vista-grelha .col-item {
+        width: 50% !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .titulo-contactos {
+        font-size: 26px;
+        margin-top: 24px;
+        margin-bottom: 20px;
+        letter-spacing: 1px;
+    }
+
+    .search-and-view {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 24px;
+        padding: 0 10px;
+    }
+
+    .search-wrapper {
+        width: calc(100% - 100px);
+        max-width: none;
+        flex: 1;
+    }
+
+    .view-btns {
+        flex-shrink: 0;
+    }
+
+    .vista-grelha .col-item {
+        width: 50% !important;
+    }
+
+    .contact-card {
+        padding: 12px 10px;
+        min-height: 110px;
+        margin-bottom: 14px;
+    }
+
+    .foto-wrapper {
+        width: 72px;
+        height: 82px;
+        margin-right: 12px;
+    }
+
+    .foto-placeholder {
+        font-size: 36px;
+    }
+
+    .info p {
+        font-size: 12px;
+    }
+
+    .info-nome {
+        font-size: 13px !important;
+    }
+
+    .linkedin-icons a {
+        width: 24px;
+        height: 24px;
+        font-size: 12px;
+        margin-right: 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    .titulo-contactos {
+        font-size: 22px;
+        letter-spacing: 0.5px;
+    }
+
+    .search-and-view {
+        padding: 0 5px;
+    }
+
+    .vista-grelha .col-item {
+        width: 100% !important;
+        float: none !important;
+    }
+
+    .contact-card {
+        padding: 12px 10px;
+        min-height: 100px;
+        margin-bottom: 12px;
+    }
+
+    .foto-wrapper {
+        width: 65px;
+        height: 74px;
+        margin-right: 12px;
+    }
+
+    .foto-placeholder {
+        font-size: 32px;
+    }
+
+    .info p {
+        font-size: 11.5px;
+    }
+
+    .info-nome {
+        font-size: 12.5px !important;
+    }
+
+    .linkedin-icons {
+        margin-top: 6px;
+    }
+
+    .linkedin-icons a {
+        width: 22px;
+        height: 22px;
+        font-size: 11px;
+        margin-right: 3px;
+    }
+}
+
+/* Admin */
+.admin-panel {
+    max-width: 1500px;
+    padding-top: 34px;
+    padding-bottom: 60px;
+    margin: 0 auto;
+}
+
+.admin-login,
+.admin-header,
+.admin-form {
+    background-color: #e2e2e2;
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+}
+
+.admin-login {
+    max-width: 430px;
+    margin: 70px auto;
+    padding: 26px 28px;
+}
+
+.admin-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.admin-logs {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.admin-logs h2,
+.admin-section h2 {
+    margin-top: 0;
+}
+
+.admin-logs h2 {
+    text-align: center;
+}
+
+.admin-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 28px;
+    flex-wrap: nowrap;
+    margin-bottom: 8px;
+}
+
+.admin-section > div {
+    float: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.admin-section .col-md-3 {
+    width: 320px;
+    flex: 0 0 320px;
+}
+
+.admin-section .col-md-9 {
+    width: auto;
+    max-width: calc(100% - 348px);
+    flex: 0 1 auto;
+}
+
+.admin-section .col-md-9,
+.admin-logs {
+    overflow-x: auto;
+}
+
+.admin-header h1,
+.admin-login h1 {
+    margin: 0 0 8px;
+    font-size: 34px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: #222;
+}
+
+.admin-login h1 {
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+.admin-header p,
+.login-message {
+    margin: 0;
+    color: #555;
+    font-size: 14px;
+}
+
+.login-message {
+    background-color: #fff;
+    border-left: 4px solid #1e90ff;
+    border-radius: 8px;
+    margin-bottom: 18px;
+    padding: 10px 12px;
+}
+
+.admin-panel h2 {
+    margin: 30px 0 14px;
+    font-size: 22px;
+    font-weight: 300;
+}
+
+.admin-panel label,
+.admin-login label {
+    width: 100%;
+    font-weight: 400;
+}
+
+.admin-panel input,
+.admin-panel select,
+.admin-login input {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #efefef;
+    padding: 8px 10px;
+    margin-top: 6px;
+}
+
+.admin-panel input:focus,
+.admin-panel select:focus,
+.admin-login input:focus {
+    border-color: #1e90ff;
+    box-shadow: 0 0 0 2px rgba(30, 144, 255, 0.14);
+    outline: none;
+}
+
+.admin-panel button,
+.admin-panel a[href="panel.php"],
+.admin-login button {
+    border: 1px solid #1e90ff;
+    background-color: #1e90ff;
+    color: #fff;
+    border-radius: 8px;
+    padding: 8px 13px;
+    text-decoration: none;
+}
+
+.admin-login button {
+    width: 100%;
+}
+
+.admin-panel button:hover,
+.admin-panel a[href="panel.php"]:hover,
+.admin-login button:hover {
+    background-color: #0d78db;
+    border-color: #0d78db;
+    color: #fff;
+}
+
+.admin-panel table {
+    width: auto;
+    table-layout: auto;
+    background-color: #fff;
+    border: 0;
+    border-radius: 10px;
+    margin: 0 auto 24px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+    display: table;
+}
+
+.admin-panel th,
+.admin-panel td {
+    border: 0;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 16px;
+    font-size: 13px;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.admin-panel th {
+    background-color: #e2e2e2;
+    font-weight: 500;
+}
+
+.admin-panel table form {
+    margin: 0;
+}
+
+.admin-panel table form[action="queries.php"] button {
+    background-color: #d9534f;
+    border-color: #d9534f;
+}
+
+.admin-panel .contacts-table th,
+.admin-panel .contacts-table td {
+    padding-left: 18px;
+    padding-right: 18px;
+}
+
+@media (max-width: 767px) {
+    .admin-section {
+        display: block;
+    }
+
+    .admin-section .col-md-3,
+    .admin-section .col-md-9 {
+        width: 100%;
+        max-width: none;
+    }
+
+    .admin-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .admin-login {
+        margin: 28px 12px;
+        max-width: none;
+    }
+
+    .admin-header h1,
+    .admin-login h1 {
+        font-size: 28px;
+    }
+}
+
+
+/* Botão adicionar contacto */
+.btn-adicionar {
+    background-color: #1e90ff;
+    border-color: #1e90ff;
+    color: #fff;
+}
+
+.btn-adicionar:hover {
+    background-color: #0d78db;
+    border-color: #0d78db;
+    color: #fff;
+}
+
+/* Modal */
+.modal-contacto {
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.modal-contacto .modal-header {
+    background-color: #e2e2e2;
+    border-bottom: none;
+}
+
+.modal-contacto .modal-footer {
+    background-color: #f5f5f5;
+    border-top: none;
+}
+
+.modal-contacto .input-group-addon {
+    background-color: #efefef;
+    border-color: #ddd;
+    color: #555;
+}
+
+/* Botões editar e apagar no card */
+.card-actions {
+    margin-top: 8px;
+    display: flex;
+    gap: 6px;
+}
+
+.btn-action {
+    width: 26px;
+    height: 26px;
+    border: none;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.btn-edit {
+    background-color: #1e90ff;
+    color: #fff;
+}
+
+.btn-edit:hover {
+    background-color: #0d78db;
+}
+
+.btn-delete {
+    background-color: #d9534f;
+    color: #fff;
+}
+
+.btn-delete:hover {
+    background-color: #c9302c;
+}
+
+.form-apagar {
+    display: inline;
+    margin: 0;
+}
+
+
+
+.btn-gerir {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: #fff;
+}
+
+.btn-gerir:hover {
+    background-color: #5a6268;
+    border-color: #5a6268;
+    color: #fff;
+}
